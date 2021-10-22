@@ -14,11 +14,7 @@ constructor(props){
 }
 
 
-
-
-
-async componentDidMount(){
-    
+async componentDidMount(){    
     
     const response=await APIInvoke.invokeGET("/vacunas")
     this.setState({
@@ -38,8 +34,7 @@ async remove(e,vacuna){
   //this.mounted=true;
 } 
 
-async componentDidUpdate(){
-  
+async componentDidUpdate(){  
     
     if(this.state.nmount===true){
         const response=await APIInvoke.invokeGET("/vacunas")
