@@ -9,7 +9,7 @@ class Home extends React.Component{
 <br/>
 <br/>
 <br/>
-<h4 text-align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página de inicio en construcción</h4>
+<h4 id="con">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página de inicio en construcción</h4>
         </div>
         )
     }

@@ -13,7 +13,7 @@ function Navbar(){
 <Container>
     <Wrapper>
         <IconContext.Provider value={{style:{fontSize:"1.5em"}}}>
-        <Link to="/home" className="navbar-brand" text-decoration="none">
+        <Link to="/home" className="navbar-brand" textDecoration="none">
         <LogoContainer to="/home" className="navbar-brand text-white" >
         
         

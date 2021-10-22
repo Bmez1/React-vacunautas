@@ -13,7 +13,7 @@ componentDidMount(){
         <div className="login-wrap">
            
              <div className="login-html">
-                <input id="tab-1" type="radio" name="tab" className="sign-in" checked/><label htmlFor="tab-1" className="tab">Iniciar Sesión (BETA)</label>          
+                <input id="tab-1" type="radio" name="tab" className="sign-in" /><label htmlFor="tab-1" className="tab">Iniciar Sesión (BETA)</label>          
                 <div className="login-form">
                         <div className="group">
                             <label htmlFor="user" className="label">Usuario</label>

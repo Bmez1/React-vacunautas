@@ -11,7 +11,7 @@ class Creditos extends React.Component{
     <div className="row">
         <div className="col-md-12">
             
-                <table class="table table-striped table-hover table-bordered align-middle" display= "flex"  justify-content= "center">
+                <table className="table table-striped table-hover table-bordered align-middle" display= "flex"  justify-content= "center">
                 <thead>
                 <tr bgcolor="#27BFAE" className="text-white"> 
                 <th>Tripulante</th>

@@ -8,7 +8,7 @@ class VacunasEditar extends React.Component {
   constructor(args) {
     super(args)
     this.state = {
-     
+      id: '',
       nombre: '',
       dosis:'',
       viaAplicacion:'',
@@ -20,6 +20,7 @@ class VacunasEditar extends React.Component {
 
 
   async componentDidMount(){
+    document.getElementById("nombre").focus();
       const vacunaId=this.props.match.params.vacunaId
       const response=await APIInvoke.invokeGET(`/vacunas/${vacunaId}`)
       this.setState({
@@ -47,23 +48,43 @@ handleChange=(e) =>{
 
 }
 
+handleSubmit =(ev)=>{
+  ev.preventDefault();
+ 
+ 
+  this.edit()
+}
+
   async edit() {
-      const data={
+      const data2={
           id:this.state.id,
-          nombre: this.state.nombre,
-      dosis: this.state.dosis,
-      viaAplicacion: this.state.viaAplicacion,
-      laboratorio: this.state.laboratorio,
-      num_lote: this.state.num_lote
+          nombre: this.state.nombre.trim(),
+          dosis: this.state.dosis.trim(),
+          viaAplicacion: this.state.viaAplicacion.trim(),
+          laboratorio: this.state.laboratorio.trim(),
+          num_lote: this.state.num_lote.trim()
       }
-      const response=await APIInvoke.invokePUT(`/vacunas`, data)
-      if(response.id!==0){
-          this.props.history.push(`/vacunas`)
+      if (data2.nombre===""||data2.dosis===""||data2.viaAplicacion===""||data2.laboratorio===""||data2.num_lote===""){
+        alert("Debe diligenciar todos los espacios del formulario");
+    }else{
+      const response=await APIInvoke.invokePUT(`/vacunas`, data2)
+
+      document.getElementById("nombre").value="";
+      document.getElementById("dosis").value="";
+      document.getElementById("viaAplicacion").value="";
+      document.getElementById("laboratorio").value="";
+      document.getElementById("num_lote").value="";
+
+      if (response.id !== 0) {
+        this.props.history.push(`/vacunas`)
+        alert("Cambio exitoso");
+      }else{
+        alert("Cambio fallo");
       }
-      else{
-          console.log(response.message)
-      }
-  }
+        //window.location='/vacunas';
+   } }
+
+ 
 
   render() {
     return (
@@ -76,7 +97,7 @@ handleChange=(e) =>{
         </section>
     </div>
   
-    <form>
+    <form onSubmit={this.handleSubmit}>
     <section id="contenido">
         <div className="container border" id="div4">
             <div className="row">
@@ -103,9 +124,9 @@ handleChange=(e) =>{
                     <div className="col">
                         <label  htmlFor="nombre" className="form-label">Dosis</label>
                         <br/>
-                        <select type="dosis" name="dosis"  id="dosis" className="form-select" aria-label="Default select example"
+                        <select defaultValue="" type="dosis" name="dosis"  id="dosis" className="form-select" aria-label="Default select example"
                         checked={this.state.dosis}   onChange={this.handleChange}>
-                            <option value="" selected>---- Seleccione ----</option>
+                            <option value="" >---- Seleccione ----</option>
                             <option value="Recien Nacido">Recien Nacido</option>
                             <option value="Única">Única</option>
                             <option value="Primera">Primera</option>
@@ -130,9 +151,9 @@ handleChange=(e) =>{
                     <div className="col">
                         <label htmlFor="nombre" className="form-label">Via de Aplicación</label>
                         <br/>
-                        <select type="viaAplicacion" name="viaAplicacion" id="viaAplicacion" className="form-select" aria-label="Default select example"
+                        <select  defaultValue="" type="viaAplicacion" name="viaAplicacion" id="viaAplicacion" className="form-select" aria-label="Default select example"
                         checked={this.state.viaAplicacion}   onChange={this.handleChange} >
-                            <option value="" selected>---- Seleccione ----</option>
+                            <option value="" >---- Seleccione ----</option>
                             <option value="Oral">Oral</option>
                             <option value="Intramuscular">Intramuscular</option>
                             <option value="Intravenosa">Intravenosa</option>
@@ -147,7 +168,7 @@ handleChange=(e) =>{
                 <Link to="/vacunas" type="submit" className="btn btn-danger">Cancelar</Link>
                 &nbsp;&nbsp;
                 
-                <button href="/vacunas" type="submit" className="btn btn-primary" onClick={this.edit.bind(this)}>Actualizar</button>  
+                <button href="/vacunas" type="submit" className="btn btn-primary" >Actualizar</button>  
             </div>   
         </div>
         </section>
