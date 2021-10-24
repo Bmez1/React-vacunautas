@@ -233,8 +233,8 @@ handleSubmit =(ev)=>{
                             <option value="Oral">Oral</option>
                             <option value="Intramuscular">Intramuscular</option>
                             <option value="Intravenosa">Intravenosa</option>
-                            <option value="Intradermica">Intradermica</option>
-                            <option value="Intradermica - Oral">Intradermica - Oral</option>
+                            <option value="Intradérmica">Intradérmica</option>
+                            <option value="Intradérmica - Oral">Intradérmica - Oral</option>
                           </select>
                     </div>
                 </div>
