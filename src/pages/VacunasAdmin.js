@@ -48,8 +48,8 @@ class VacunasAdmin extends React.Component {
                         <div className="col-md-12">
                             <Link to="/vacunas-crear" className="btn btn-light btn-md font-weight-bold ">Agregar Vacuna</Link>
                             <br /><br />
-                            {
-                                arregloVacunas.length === 0 ? <div className="lert alert-warning">No existen registros.</div> :
+                            {  
+                                arregloVacunas.length === 0 ? <div className="alert alert-warning">No existen registros.</div> :
                                     <table className="table table-striped table-hover table-bordered align-middle" display="flex" justify-content="center">
                                         <thead>
                                             <tr bgcolor="#27BFAE" className="text-white">

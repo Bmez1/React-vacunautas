@@ -132,6 +132,7 @@ class VacunasEditar extends React.Component {
                       <option value="Primer Refuerzo">Primer Refuerzo</option>
                       <option value="Segundo Refuerzo">Segundo Refuerzo</option>
                       <option value="Anual">Anual</option>
+                      <option value="Refuerzo">Refuerzo</option>
                     </select>
                   </div>
                 </div>
@@ -153,6 +154,8 @@ class VacunasEditar extends React.Component {
                       <option value="Oral">Oral</option>
                       <option value="Intramuscular">Intramuscular</option>
                       <option value="Intravenosa">Intravenosa</option>
+                      <option value="Intradermica">Intradermica</option>
+                      <option value="Intradermica - Oral">Intradermica - Oral</option>
                     </select>
                   </div>
                 </div>
