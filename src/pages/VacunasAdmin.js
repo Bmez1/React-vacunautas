@@ -64,7 +64,7 @@ class VacunasAdmin extends React.Component {
                                                 arregloVacunas.map(
                                                     vacuna =>
                                                         <tr key={vacuna.id}>
-                                                            <td >{vacuna.id}</td>
+                                                            <td className="text-center">{vacuna.id}</td>
                                                             <td >{vacuna.nombre}</td>
                                                             <td>{vacuna.dosis}</td>
 
@@ -83,7 +83,6 @@ class VacunasAdmin extends React.Component {
 
                                         </tbody>
                                     </table>
-
                             }
                         </div>
                     </div>
