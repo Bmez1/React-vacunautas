@@ -31,12 +31,6 @@ class VacunasEditar extends React.Component {
     })
   }
 
-  /* handleChange(e){
-     this.setState({
-         nombre: e.target.value
-     })
- }*/
-
   handleChange = (e) => {
     const { name, value } = e.target
 
@@ -81,8 +75,6 @@ class VacunasEditar extends React.Component {
     }
   }
 
-
-
   render() {
     return (
       <div>
@@ -121,7 +113,7 @@ class VacunasEditar extends React.Component {
                   <div className="col">
                     <label htmlFor="nombre" className="form-label">Dosis</label>
                     <br />
-                    <select defaultValue="" type="dosis" name="dosis" id="dosis" className="form-select" aria-label="Default select example"
+                    <select value={this.state.dosis} type="dosis" name="dosis" id="dosis" className="form-select" aria-label="Default select example"
                       checked={this.state.dosis} onChange={this.handleChange}>
                       <option value="" >---- Seleccione ----</option>
                       <option value="Recien Nacido">Recien Nacido</option>
@@ -132,6 +124,7 @@ class VacunasEditar extends React.Component {
                       <option value="Primer Refuerzo">Primer Refuerzo</option>
                       <option value="Segundo Refuerzo">Segundo Refuerzo</option>
                       <option value="Anual">Anual</option>
+                      <option value="Refuerzo">Refuerzo</option>
                     </select>
                   </div>
                 </div>
@@ -147,12 +140,14 @@ class VacunasEditar extends React.Component {
                   <div className="col">
                     <label htmlFor="nombre" className="form-label">Via de Aplicación</label>
                     <br />
-                    <select defaultValue="" type="viaAplicacion" name="viaAplicacion" id="viaAplicacion" className="form-select" aria-label="Default select example"
+                    <select value={this.state.viaAplicacion} type="viaAplicacion" name="viaAplicacion" id="viaAplicacion" className="form-select" aria-label="Default select example"
                       checked={this.state.viaAplicacion} onChange={this.handleChange} >
                       <option value="" >---- Seleccione ----</option>
                       <option value="Oral">Oral</option>
                       <option value="Intramuscular">Intramuscular</option>
                       <option value="Intravenosa">Intravenosa</option>
+                      <option value="Intradérmica">Intradérmica</option>
+                      <option value="Intradérmica - Oral">Intradérmica - Oral</option>
                     </select>
                   </div>
                 </div>
@@ -169,13 +164,6 @@ class VacunasEditar extends React.Component {
             </div>
           </section>
         </form>
-
-
-
-
-
-
-
       </div>
     );
   }

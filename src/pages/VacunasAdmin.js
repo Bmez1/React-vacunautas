@@ -21,7 +21,6 @@ class VacunasAdmin extends React.Component {
             vacunas: response
         })
         //this.mounted=true;
-
     }
 
 
@@ -33,8 +32,6 @@ class VacunasAdmin extends React.Component {
         if (response.id !== 0) { alert("Registro eliminado"); }
         //this.mounted=true;
     }
-
-    //componentWillUnmount() { this.mounted = false }
 
     render() {
 
@@ -49,15 +46,16 @@ class VacunasAdmin extends React.Component {
                             <Link to="/vacunas-crear" className="btn btn-light btn-md font-weight-bold ">Agregar Vacuna</Link>
                             <br /><br />
                             {
-                                arregloVacunas.length === 0 ? <div className="lert alert-warning">No existen registros.</div> :
+                                arregloVacunas.length === 0 ? <div className="alert alert-warning">No existen registros.</div> :
                                     <table className="table table-striped table-hover table-bordered align-middle" display="flex" justify-content="center">
                                         <thead>
                                             <tr bgcolor="#27BFAE" className="text-white">
                                                 <th align-middlescope="col">ID</th>
-                                                <th scope="col">Vacuna contra</th>
+                                                <th scope="col">Vacuna</th>
                                                 <th scope="col" className="col-md-2">Dosis</th>
                                                 <th scope="col">Laboratorio</th>
                                                 <th scope="col" className="col-md-2">Nº de Lote</th>
+                                                <th scope="col" className="col-md-2">Via de Aplicación</th>
                                                 <th scope="col" colSpan="2">Acciones</th>
                                             </tr>
                                         </thead>
@@ -72,16 +70,12 @@ class VacunasAdmin extends React.Component {
 
                                                             <td>{vacuna.laboratorio}</td>
                                                             <td >{vacuna.num_lote}</td>
-
+                                                            <td >{vacuna.viaAplicacion}</td>
                                                             <td >
-
-
                                                                 <Link to={`/vacunas-editar/${vacuna.id}`} className="btn btn-success btn-sm" title="Editar"><i className="fas fa-sync-alt"></i></Link>
-
-                                                            </td><td>
-
+                                                            </td>
+                                                            <td>
                                                                 <button onClick={(e) => this.remove(e, vacuna)} className="btn btn-danger btn-sm" title="Eliminar"><i className="far fa-trash-alt"></i></button>
-
                                                             </td>
                                                         </tr>
                                                 )
@@ -91,9 +85,7 @@ class VacunasAdmin extends React.Component {
                                     </table>
 
                             }
-
                         </div>
-
                     </div>
                 </div>
             </div>
