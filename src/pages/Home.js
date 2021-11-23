@@ -1,17 +1,85 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-class Home extends React.Component{
-    render(){
-        return(
-        <div>
-<Navbar></Navbar>
-<br/>
-<br/>
-<br/>
-<br/>
-<h4 id="con">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Página de inicio en construcción</h4>
-        </div>
-        )
-    }
+import React, {Fragment} from 'react';
+import Header from "../parts/Header";
+import Sidebar from "../parts/Sidebar";
+import BreadCrumb from "../parts/BreadCrumb";
+import {Link} from "react-router-dom";
+import PanelHeading from "../parts/panel/PanelHeading";
+
+const Home = () => {
+    return (
+        <Fragment>
+            <div id="app" className="app app-header-fixed app-sidebar-fixed">
+                <Header/>
+                <Sidebar/>
+                <div id="content" className="app-content">
+                    <BreadCrumb/>
+
+                    <div className="row">
+                        <div className="col-xl-3 col-md-6">
+                            <div className="widget widget-stats bg-blue">
+                                <div className="stats-icon"><i className="fa fa-desktop"></i></div>
+                                <div className="stats-info">
+                                    <h4>TOTAL VISITORS</h4>
+                                    <p>3,291,922</p>
+                                </div>
+                                <div className="stats-link">
+                                    <Link to="#">View Detail <i className="fa fa-arrow-alt-circle-right"></i></Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-xl-3 col-md-6">
+                            <div className="widget widget-stats bg-info">
+                                <div className="stats-icon"><i className="fa fa-link"></i></div>
+                                <div className="stats-info">
+                                    <h4>BOUNCE RATE</h4>
+                                    <p>20.44%</p>
+                                </div>
+                                <div className="stats-link">
+                                    <Link to="#">View Detail <i className="fa fa-arrow-alt-circle-right"></i></Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-xl-3 col-md-6">
+                            <div className="widget widget-stats bg-orange">
+                                <div className="stats-icon"><i className="fa fa-users"></i></div>
+                                <div className="stats-info">
+                                    <h4>UNIQUE VISITORS</h4>
+                                    <p>1,291,922</p>
+                                </div>
+                                <div className="stats-link">
+                                    <Link to="#">View Detail <i className="fa fa-arrow-alt-circle-right"></i></Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-xl-3 col-md-6">
+                            <div className="widget widget-stats bg-red">
+                                <div className="stats-icon"><i className="fa fa-clock"></i></div>
+                                <div className="stats-info">
+                                    <h4>AVG TIME ON SITE</h4>
+                                    <p>00:12:23</p>
+                                </div>
+                                <div className="stats-link">
+                                    <Link to="#">View Detail <i className="fa fa-arrow-alt-circle-right"></i></Link>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="panel panel-inverse">
+                        <PanelHeading/>
+                        <div className="panel-body">
+                            Panel Content Here
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </Fragment>
+    );
 }
-export default Home
+
+export default Home;

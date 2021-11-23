@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import APIInvoke from "../utils/APIInvoke";
-import './VacunasEditar.css'
 import { Link } from "react-router-dom";
 
 class VacunasEditar extends React.Component {
